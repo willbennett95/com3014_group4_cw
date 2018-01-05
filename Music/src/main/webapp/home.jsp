@@ -1,6 +1,5 @@
 <%-- 
-    Document   : index3
-    Created on : 03-Jan-2018, 19:49:07
+    Document   : Home Page
     Author     : Dina
 --%>
 <%@page import="java.util.Date"%>
@@ -14,7 +13,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="images/music.ico">
 
     <title>Soundbite</title>
 

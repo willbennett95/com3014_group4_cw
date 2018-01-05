@@ -1,7 +1,8 @@
 <%-- 
-    Document   : Welcome Page
+    Document   : Profile Page
     Author     : Dina
 --%>
+
 <%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -21,13 +22,15 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     
     <!-- JavaScript -->
-
+    <link href="js/profile.js">
+    
     <% 
         Date date = new Date();
-        %>
-
+    %>
+    
     <!-- Custom styles for this template -->
     <link href="css/carousel.css" rel="stylesheet">
+    <link href="profile.css" rel="stylesheet">
   
 <!-- NAVBAR
 ================================================== -->
@@ -44,11 +47,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="login.jsp">Log In</a>
+              <a class="navbar-brand" href="#SESSION END#">Log Out</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="welcome.jsp">Home</a></li>
+                <li class="active"><a href="home.jsp">Home</a></li>
                 <li><a href="store.jsp">Shop</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -62,67 +65,38 @@
       </div>
     </div>
 
-
-    <!-- Carousel
+    <!-- User Profile 
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img class="first-slide" src="images/discover.jpeg" alt="First slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Discover new music!</h1>
-              <p>What will inspire you today?</p>
-              <p><a class="btn btn-lg btn-primary" href="login.jsp" role="button">Enter!</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img class="second-slide" src="images/shop.jpeg" alt="Second slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Visit our store.</h1>
-              <p>See our vast selection!</p>
-              <p><a class="btn btn-lg btn-primary" href="store.jsp" role="button">Browse store</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img class="third-slide" src="images/board.jpeg" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Upload your own creations.</h1>
-              <p>Create a personalised artist page!</p>
-              <p><a class="btn btn-lg btn-primary" href="INFORMATION" role="button">Learn more</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div><!-- /.carousel -->
-
-
-    <!-- Marketing messaging and featurettes
-    ================================================== -->
-    <!-- Wrap the rest of the page in another container to center all the content. -->
-
+   
     <div class="container marketing">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
-
-
+<div class="container" style="margin-top: 100px; margin-bottom: 20px;">
+	<div class="row panel">
+		<div class="col-md-4 bg_blur ">
+		</div>
+        <div class="col-md-8  col-xs-12">
+           <img src="http://lorempixel.com/output/people-q-c-100-100-1.jpg" class="img-thumbnail picture hidden-xs" />
+           <img src="http://lorempixel.com/output/people-q-c-100-100-1.jpg" class="img-thumbnail visible-xs picture_mob" />
+           <div class="header">
+                <h1>Loren Ipsum</h1>
+                <h4>Music Enthusiast</h4>
+                <span>Some generic and benign information."</span>
+           </div>
+        </div>
+    </div>   
+    
+	<div class="row nav">    
+        <div class="col-md-4"></div>
+        <div class="col-md-8 col-xs-12" style="margin: 0px;padding: 0px;">
+            <div class="col-md-4 col-xs-4 well"><i class="fa fa-weixin fa-lg"></i> 16</div>
+            <div class="col-md-4 col-xs-4 well"><i class="fa fa-heart-o fa-lg"></i> 14</div>
+            <div class="col-md-4 col-xs-4 well"><i class="fa fa-thumbs-o-up fa-lg"></i> 26</div>
+            <div class="col-md-4 col-xs-4 well"><p><a class ="btn btn-lg btn-primary" href="#UPLOAD" role="button">Upload Audio</a></p></div>
+        </div>
+    </div>
+</div>
       <!-- FOOTER -->
       <footer>
           <p class="pull-right"><a href="#">Back to top</a></p>
@@ -131,6 +105,7 @@
       </footer>
 
     </div><!-- /.container -->
+   
 
 
     <!-- Bootstrap core JavaScript
@@ -141,4 +116,3 @@
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
-
