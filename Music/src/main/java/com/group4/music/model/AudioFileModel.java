@@ -16,7 +16,7 @@ public class AudioFileModel {
     private MultipartFile audio;
 
     public MultipartFile getAudio() {
-        return audio;
+        return this.audio;
     }
 
     public void setAudio(MultipartFile audio) {
