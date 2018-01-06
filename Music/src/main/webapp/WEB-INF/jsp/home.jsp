@@ -17,6 +17,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+    <link rel="icon" href="<c:url value="/resources/images/music.ico" />">
+    
     <title>Soundbite</title>
 
     <!-- JavaScript -->
