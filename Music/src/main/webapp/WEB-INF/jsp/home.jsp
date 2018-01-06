@@ -5,6 +5,7 @@
 <%@page import="java.util.Date"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -50,7 +51,7 @@
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="<c:url value="home" />">Home</a></li>
-                                <li><a href="<c:url value="store" />">Store</a></li>
+                                <li><a href="<c:url value="store" />">Collection</a></li>
                                 <li><a href="<c:url value="profile" />">View Profile</a></li>
                             </ul>
                             </li>
@@ -87,20 +88,19 @@
                     <img class="second-slide" src="<c:url value="/resources/images/shop.jpeg" />" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Visit our store.</h1>
-                            <p>See our vast selection!</p>
-                            <p><a class="btn btn-lg btn-primary" href="<c:url value="store" />" role="button">Browse store</a></p>
+                            <h1>Visit our collection.</h1>
+                            <p>Unique user uploads!</p>
+                            <p><a class="btn btn-lg btn-primary" href="<c:url value="store" />" role="button">Browse</a></p>
                         </div>
                     </div>
                 </div>
                 <div class="item">
-                    
                     <img class="third-slide" src="<c:url value="/resources/images/board.jpeg" />" alt="Third slide">
                     <div class="container">
                         <div class="carousel-caption">
                             <h1>Upload your own creations.</h1>
                             <p>Create a personalised artist page!</p>
-                            <p><a class="btn btn-lg btn-primary" href="INFROMATION" role="button">Learn more</a></p>
+                            <p><a class="btn btn-lg btn-primary" href="#INFORMATION" role="button">Learn more</a></p>
                         </div>
                     </div>
                 </div>
@@ -132,13 +132,13 @@
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="img-circle" src="<c:url value="/resources/images/sales.jpg" />" alt="Deals" width="140" height="140">
-                    <h2>See our latest deals!</h2>
+                    <h2>See our latest news!</h2>
                     <p>Description.</p>
                     <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="img-circle" src="<c:url value="/resources/images/join.jpeg" />" alt="Join Us" width="140" height="140">
-                    <h2>Join our community!</h2>
+                    <h2>Join the community!</h2>
                     <p>Description.</p>
                     <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->

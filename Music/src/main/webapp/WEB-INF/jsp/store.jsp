@@ -21,7 +21,7 @@
 
 
     <!-- CSS -->
-    <link rel="stylesheet" href="<c:url value="css/shop.css" />" >
+    <link rel="stylesheet" href="<c:url value="/resources/style/shop.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/style/carousel.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/style/bootstrap.min.css" />" >
    
@@ -49,20 +49,7 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                    <li class="active"><a href="<c:url value="home" />">Home</a></li>
-                   <li><a href="<c:url value="store" />">Store</a></li>
-                   <li><a href="#about">About</a></li>
-                   <li><a href="#contact">Contact</a></li>
-    <!--            <li class="dropdown">
-                  <a href="#" class <!--="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                     <ul class="dropdown-menu">
-                   <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
- -->
+                   <li><a href="<c:url value="store" />">Collection</a></li>
                   </ul>
                 </li>
               </ul>
@@ -90,6 +77,7 @@
                         <div class="carousel-caption">
                             <h1>Discover new music!</h1>
                             <p>What will inspire you today?</p>
+                            <p><a class="btn btn-lg btn-primary" href="<c:url value="login" />" role="button">Log in</a></p>
                         </div>
                     </div>
                 </div>
@@ -97,9 +85,9 @@
                     <img class="second-slide" src="<c:url value="/resources/images/shop.jpeg" />" alt="Second slide">
                     <div class="container">
                         <div class="carousel-caption">
-                            <h1>Visit our store.</h1>
-                            <p>See our vast selection!</p>
-                            <p><a class="btn btn-lg btn-primary" href="store" role="button">Browse store</a></p>
+                            <h1>Visit our collection.</h1>
+                            <p>Unique user uploads!</p>
+                            <p><a class="btn btn-lg btn-primary" href="store" role="button">Browse</a></p>
                         </div>
                     </div>
                 </div>
@@ -110,7 +98,7 @@
                         <div class="carousel-caption">
                             <h1>Upload your own creations.</h1>
                             <p>Create a personalised artist page!</p>
-                            <p><a class="btn btn-lg btn-primary" href="INFROMATION" role="button">Learn more</a></p>
+                            <p><a class="btn btn-lg btn-primary" href="#INFORMATION" role="button">Learn more</a></p>
                         </div>
                     </div>
                 </div>
@@ -138,7 +126,7 @@
 
           <div class="row">
             <div class="card">
-              <img src="<c:url value="/resources/images/guitar.jpg" />" alt="Card image cap">
+              <img data-src="holder.js/100px280?theme=thumb" alt="Card image cap">
               <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
             <div class="card">

@@ -18,7 +18,7 @@
     <meta name="author" content="">
     <link rel="icon" href="<c:url value="/resources/images/music.ico" />">
 
-    <title>Soubdbite Profile</title>
+    <title>Soundbite Profile</title>
 
     
     <% 
@@ -51,8 +51,7 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                     <li class="active"><a href="<c:url value="home" />">Home</a></li>
-                    <li><a href="<c:url value="store" />">Store</a></li>
-                <li><a href="#about">About</a></li>
+                    <li><a href="<c:url value="store" />">Collection</a></li>
                 <li><a href="#contact">Contact</a></li>
                   </ul>
                 </li>
@@ -81,7 +80,7 @@
            <div class="header">
                 <h1>Loren Ipsum</h1>
                 <h4>Music Enthusiast</h4>
-                <span>Some generic and benign information."</span>
+                <span>Some generic and benign information.</span>
            </div>
         </div>
     </div>   
@@ -92,14 +91,14 @@
             <div class="col-md-4 col-xs-4 well"><i class="fa fa-weixin fa-lg"></i> 16</div>
             <div class="col-md-4 col-xs-4 well"><i class="fa fa-heart-o fa-lg"></i> 14</div>
             <div class="col-md-4 col-xs-4 well"><i class="fa fa-thumbs-o-up fa-lg"></i> 26</div>
-            <div class="col-md-4 col-xs-4 well"><p><a class ="btn btn-lg btn-primary" href="<c:url value="audioupload" />" role="button">Upload Audio</a></p></div>
+            <div class="col-md-4 col-xs-4 well"><p><a class ="btn btn-lg btn-primary" href="<c:url value="/upload/audio" />" role="button">Upload Audio</a></p></div>
         </div>
     </div>
 </div>
       <!-- FOOTER -->
       <footer>
           <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2016 Company, Inc. &middot;</p>
+        <p>&copy; 2018 - Group 4 &middot;</p>
         <p><%= date %> </p>
       </footer>
 
