@@ -27,7 +27,7 @@ public class FileValidator implements Validator {
         if(file.getAudio()!=null){
             if (file.getAudio().getSize() == 0) {
                 //use resource for error instead: missing.file= Please select a file/"missing.file"
-                errors.rejectValue("file", "Please select a file.");
+                errors.rejectValue("file", "file.missing");
             }
         }
     }
