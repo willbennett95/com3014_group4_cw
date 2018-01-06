@@ -1,6 +1,5 @@
 <%-- 
-    Document   : index3
-    Created on : 03-Jan-2018, 19:49:07
+    Document   : Home Page
     Author     : Dina
 --%>
 <%@page import="java.util.Date"%>
@@ -15,20 +14,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
-    <meta name="author" content="">
-
+    <meta name="author" content="Group4">
     <link rel="icon" href="<c:url value="/resources/images/music.ico" />">
     
     <title>Soundbite</title>
 
-    <!-- JavaScript -->
 
     <%
         Date date = new Date();
     %>
 
-    <!-- Custom styles for this template 
-    <link href="css/carousel.css" rel="stylesheet"> -->
+    <!-- CSS -->
     <link rel="stylesheet" href="<c:url value="/resources/style/carousel.css" />" >
     <link rel="stylesheet" href="<c:url value="/resources/style/bootstrap.min.css" />" >
 
@@ -53,10 +49,9 @@
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="<c:url value="home.jsp" />">Home</a></li>
-                                <li><a href="<c:url value="store.jsp" />">Shop</a></li>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#contact">Contact</a></li>
+                                <li class="active"><a href="<c:url value="home" />">Home</a></li>
+                                <li><a href="<c:url value="store" />"> Music Collection</a></li>
+                                <li><a href="<c:url value="profile" />"> View Profile</a></li>
                             </ul>
                             </li>
                             </ul>
@@ -84,6 +79,7 @@
                         <div class="carousel-caption">
                             <h1>Discover new music!</h1>
                             <p>What will inspire you today?</p>
+                            <p><a class="btn btn-lg btn-primary" href="<c:url value="login" />" role="button">Log in</a></p>
                         </div>
                     </div>
                 </div>
@@ -93,7 +89,7 @@
                         <div class="carousel-caption">
                             <h1>Visit our store.</h1>
                             <p>See our vast selection!</p>
-                            <p><a class="btn btn-lg btn-primary" href="store.jsp" role="button">Browse store</a></p>
+                            <p><a class="btn btn-lg btn-primary" href="<c:url value="store" />" role="button">Browse store</a></p>
                         </div>
                     </div>
                 </div>
@@ -152,7 +148,7 @@
             <!-- FOOTER -->
             <footer>
                 <p class="pull-right"><a href="#">Back to top</a></p>
-                <p>&copy; 2016 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+                <p>&copy; 2018 - Group 4 &middot;</p>
                 <p><%= date%> </p>
             </footer>
 
