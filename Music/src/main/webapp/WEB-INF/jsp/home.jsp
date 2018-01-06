@@ -50,8 +50,8 @@
                         <div id="navbar" class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="<c:url value="home" />">Home</a></li>
-                                <li><a href="<c:url value="store" />"> Music Collection</a></li>
-                                <li><a href="<c:url value="profile" />"> View Profile</a></li>
+                                <li><a href="<c:url value="store" />">Store</a></li>
+                                <li><a href="<c:url value="profile" />">View Profile</a></li>
                             </ul>
                             </li>
                             </ul>
