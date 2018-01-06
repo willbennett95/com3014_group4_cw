@@ -30,13 +30,8 @@
     <!-- Custom styles for this template 
     <link href="css/carousel.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="<c:url value="/resources/style/carousel.css" />" >
-    
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> 
-   
-    
-   
-    
+    <link rel="stylesheet" href="<c:url value="/resources/style/bootstrap.min.css" />" >
+
 
     </head>
     <!-- NAVBAR
