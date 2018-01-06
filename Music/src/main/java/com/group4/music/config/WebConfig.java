@@ -107,7 +107,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
      */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("home"); // if you dont put "redirect:" it will resolve the view without going in the controller!!!
+        registry.addViewController("/").setViewName("redirect:home"); // if you dont put "redirect:" it will resolve the view without going in the controller!!!
     }
 
   
