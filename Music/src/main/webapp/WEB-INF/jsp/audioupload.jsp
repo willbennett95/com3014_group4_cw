@@ -62,7 +62,7 @@
                     <fieldset>
 
                         <!-- Form Name -->
-                        <legend>Upload Video</legend>
+                        <legend>Upload Audio</legend>
 
 
                         <!-- Text input-->
@@ -78,7 +78,7 @@
                         <div class="control-group">
                             <label class="control-label" for="Description">Description</label>
                             <div class="controls">                     
-                                <textarea id="Description" name="Description">Description</textarea>
+                                <textarea id="Description" name="Description"></textarea>
                             </div>
                         </div>
                     </fieldset>
