@@ -15,6 +15,7 @@
     </head>
     <body>
         <h1>Music file upload</h1>
+<<<<<<< HEAD
 
 
         <form:form method="POST" modelAttribute="audioFileModel" enctype="multipart/form-data">
@@ -32,5 +33,8 @@
 
 
 
+=======
+        
+>>>>>>> parent of 101453f... Merge branch 'File-upload'
     </body>
 </html>

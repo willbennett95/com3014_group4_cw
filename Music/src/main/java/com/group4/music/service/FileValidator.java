@@ -6,7 +6,6 @@
 package com.group4.music.service;
 
 import com.group4.music.model.AudioFileModel;
-import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,7 +14,6 @@ import org.springframework.web.multipart.MultipartFile;
  *
  * @author Emi
  */
-@Component
 public class FileValidator implements Validator {
 
     @Override
