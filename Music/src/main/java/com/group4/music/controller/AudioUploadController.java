@@ -12,6 +12,7 @@ import java.io.IOException;
 import javax.servlet.ServletContext;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.validation.BindingResult;
@@ -26,13 +27,14 @@ import org.springframework.web.multipart.MultipartFile;
  *
  * @author Emi
  */
+@Controller
+@RequestMapping("/upload")
 public class AudioUploadController {
-    
+
     @Autowired
     FileValidator fileValidator;
     // used for getting the path of the file, wont need later
     @Autowired
-<<<<<<< HEAD
     ServletContext context;
     
     private static String UPLOAD_LOCATION="/Users/Emi/Desktop/";
@@ -68,43 +70,10 @@ public class AudioUploadController {
             //String uploadPath = context.getRealPath("") + File.separator + "temp" + File.separator;
             FileCopyUtils.copy(fileModel.getAudio().getBytes(), new File(UPLOAD_LOCATION + fileModel.getAudio().getOriginalFilename()));
 
-=======
-    ServletContext context; 
-     
-    @InitBinder("fileBucket")
-    protected void initBinderFileBucket(WebDataBinder binder) {
-       binder.setValidator(fileValidator);
-    }
-    
-    @RequestMapping(value = "/fileUpload", method = RequestMethod.GET)
-   public String getAudioUploadPage(ModelMap model) {
-      AudioFileModel audio = new AudioFileModel();
-      model.addAttribute("audioFile", audio);
-      return "audioupload";
-   }
-   
-   @RequestMapping(value="/singleUpload", method = RequestMethod.POST)
-    public String audioFileUpload(@Valid  AudioFileModel audio, BindingResult result, ModelMap model) throws IOException {
- 
-        if (result.hasErrors()) {
-            System.out.println("validation errors");
-            return "audioupload";
-        } else {            
-            System.out.println("Fetching file");
-            MultipartFile multipartFile = audio.getAudio();
- 
-            //Now do something with file...
-            //should save to database
-            String uploadPath = context.getRealPath("") + File.separator + "temp" + File.separator;
-            FileCopyUtils.copy(audio.getAudio().getBytes(), new File(uploadPath + audio.getAudio().getOriginalFilename()));
-             
->>>>>>> parent of 101453f... Merge branch 'File-upload'
             String fileName = multipartFile.getOriginalFilename();
             model.addAttribute("audioName", fileName);
             return "success";
         }
     }
- 
-    
-    
+
 }
