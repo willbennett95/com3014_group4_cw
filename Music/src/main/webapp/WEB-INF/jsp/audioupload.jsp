@@ -52,6 +52,7 @@
           </div>
         </nav>
 
+<<<<<<< HEAD
       </div>
     </div>
                 
@@ -60,10 +61,14 @@
                       <form class="form-signin">
                           <h2 class="form-signin-heading">Upload a file</h2>
                           <fieldset>
+=======
+        <form:form method="POST" modelAttribute="audioFile" enctype="multipart/form-data">
+>>>>>>> parent of 8f57c73... fixed missing file error validation
 
                 <!-- Form Name -->
                 <legend>Upload Video</legend>
 
+<<<<<<< HEAD
                 <!-- Text input-->
                <div class="control-group">
                 <label class="control-label" for="title">Title</label>
@@ -71,6 +76,19 @@
                 <input id="title" name="title" type="text" placeholder="Name" class="input-xlarge">
                 </div>
                </div>
+=======
+            <label for="file">Upload a file</label>
+
+            <form:input type="file" path="audio" />
+
+            <form:errors path="audio" />
+
+
+            <input type="submit" value="Upload" >
+
+        </form:form>
+
+>>>>>>> parent of 8f57c73... fixed missing file error validation
 
 <!-- Textarea -->
                <div class="control-group">
