@@ -84,17 +84,10 @@
                     </fieldset>
                     <!-- File Upload -->
 
-
-
-
-
                     <label for="file">Upload a file</label>
-
                     <form:input type="file" path="audio" />
-
-                    <form:errors path="audio" style="color:red;"/>
                     <input type="submit" value="Upload" />
-
+                    <form:errors path="audio" style="color:red;"/>
 
                 </form:form>
 
