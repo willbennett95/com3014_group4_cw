@@ -60,6 +60,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         messageSource.setBasename("/WEB-INF/messages");
         return messageSource;
     }
+    
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {

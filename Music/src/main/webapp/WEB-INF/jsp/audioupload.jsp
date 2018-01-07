@@ -15,83 +15,92 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" href="images/music.ico">
-        
+
         <title>Upload Audio</title>
-        
+
         <!-- CSS -->
-    <link rel="stylesheet" href="<c:url value="/resources/style/bootstrap.min.css" />" >
-    <link rel="stylesheet" href="<c:url value="/resources/style/carousel.css" />" >
-    <link rel="stylesheet" href="<c:url value="/resources/style/signin.css" />" >
-        
-        
+        <link rel="stylesheet" href="<c:url value="/resources/style/bootstrap.min.css" />" >
+        <link rel="stylesheet" href="<c:url value="/resources/style/carousel.css" />" >
+        <link rel="stylesheet" href="<c:url value="/resources/style/signin.css" />" >
+
+
     </head>
     <body>
         <!-- NAVBAR -->
-<div class="navbar-wrapper">
-      <div class="container">
+        <div class="navbar-wrapper">
+            <div class="container">
 
-        <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+                <nav class="navbar navbar-inverse navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div id="navbar" class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav">
+                                <li class="active"><a href="<c:url value="/home" />">Home</a></li>
+                                <li><a href="<c:url value="/store" />">Collection</a></li>
+                                <li><a href="<c:url value="/profile" />">My Profile</a></li>
+                            </ul>
+                            </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
-                <li class="active"><a href="<c:url value="/home" />">Home</a></li>
-                <li><a href="<c:url value="/store" />">Collection</a></li>
-                <li><a href="<c:url value="/profile" />">My Profile</a></li>
-                  </ul>
-                </li>
-              </ul>
+        </div>
+
+        <div class="container marketing">
+            <div class="container">
+                <form:form method="POST" modelAttribute="audioFileModel" enctype="multipart/form-data" class="form-signin">
+                    <h2 class="form-signin-heading">Upload a file</h2>
+                    <fieldset>
+
+                        <!-- Form Name -->
+                        <legend>Upload Video</legend>
+
+
+                        <!-- Text input-->
+                        <div class="control-group">
+                            <label class="control-label" for="title">Title</label>
+                            <div class="controls">
+                                <input id="title" name="title" type="text" placeholder="Name" class="input-xlarge">
+                            </div>
+                        </div>
+
+
+                        <!-- Textarea -->
+                        <div class="control-group">
+                            <label class="control-label" for="Description">Description</label>
+                            <div class="controls">                     
+                                <textarea id="Description" name="Description">Description</textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <!-- File Upload -->
+
+
+
+
+
+                    <label for="file">Upload a file</label>
+
+                    <form:input type="file" path="audio" />
+
+                    <form:errors path="audio" style="color:red;"/>
+                    <input type="submit" value="Upload" />
+
+
+                </form:form>
+
+
             </div>
-          </div>
-        </nav>
-
-      </div>
-    </div>
-                
-              <div class="container marketing">
-                  <div class="container">
-                      <form class="form-signin">
-                          <h2 class="form-signin-heading">Upload a file</h2>
-                          <fieldset>
-
-                <!-- Form Name -->
-                <legend>Upload Video</legend>
-
-
-                <!-- Text input-->
-               <div class="control-group">
-                <label class="control-label" for="title">Title</label>
-                <div class="controls">
-                <input id="title" name="title" type="text" placeholder="Name" class="input-xlarge">
-                </div>
-               </div>
-  
-
-<!-- Textarea -->
-               <div class="control-group">
-                <label class="control-label" for="Description">Description</label>
-                <div class="controls">                     
-                <textarea id="Description" name="Description">Description</textarea>
-                </div>
-               </div>
-                        </fieldset>
-<!-- File Upload -->
-                          <form:form method="POST" modelAttribute="audioFileModel" enctype="multipart/form-data">
-                            <label for="file">Upload a file</label>
-                            <form:input type="file" path="audio" />
-                            <form:errors path="audio" />
-                            <input type="submit" value="Upload" >
-                          </form:form>
-                      </form>
-                  </div>
-              </div> 
+        </div> 
 
     </body>
 </html>
