@@ -66,7 +66,7 @@ public class AudioUploadController {
             return "audioupload";
         } else {
             
-            String absolutePathSystem = new String(context.getRealPath(""));
+            String absolutePathSystem = context.getRealPath("");
             audioPath = new AudioPath(absolutePathSystem);
             MultipartFile multipartFile = fileModel.getAudio();
             // upload file to audio directory
