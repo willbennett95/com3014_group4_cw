@@ -53,6 +53,7 @@
         </nav>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
       </div>
     </div>
                 
@@ -61,6 +62,9 @@
                       <form class="form-signin">
                           <h2 class="form-signin-heading">Upload a file</h2>
                           <fieldset>
+=======
+        <form:form method="POST" modelAttribute="audioFile" enctype="multipart/form-data">
+>>>>>>> parent of 8f57c73... fixed missing file error validation
 =======
         <form:form method="POST" modelAttribute="audioFile" enctype="multipart/form-data">
 >>>>>>> parent of 8f57c73... fixed missing file error validation
