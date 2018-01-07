@@ -55,8 +55,6 @@ public class AudioUploadController {
     @RequestMapping(value = "/audio", method = RequestMethod.POST)
     public String audioFileUpload(@Valid AudioFileModel fileModel, BindingResult result, ModelMap model) throws IOException {
         
-        //fileValidator.validate(fileModel, result);
-        
         if (result.hasErrors()) {         
             System.out.println("validation errors");         
             return "audioupload";
