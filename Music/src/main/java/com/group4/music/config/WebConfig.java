@@ -4,13 +4,10 @@ package com.group4.music.config;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.context.support.ReloadableResourceBundleMessageSource;
-import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -54,12 +51,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
                 mediaType("json", MediaType.APPLICATION_JSON);
     }
 
-    @Bean
-    public MessageSource messageSource() {
-        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setBasename("/WEB-INF/messages");
-        return messageSource;
-    }
+    
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -118,6 +110,5 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         registry.addViewController("/").setViewName("redirect:home"); // if you dont put "redirect:" it will resolve the view without going in the controller!!!
     }
 
-    
   
 }
