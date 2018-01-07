@@ -18,6 +18,7 @@ import org.springframework.util.FileCopyUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -32,41 +33,42 @@ public class AudioUploadController {
 
     @Autowired
     FileValidator fileValidator;
-    // used for getting the path of the file
-    //wont need later
+    // used for getting the path of the file, wont need later
     @Autowired
     ServletContext context;
     
     private static String UPLOAD_LOCATION="/Users/Emi/Desktop/";
 
-    // validating the audio model (has to be the name of the parameter below where @Valid is used
-    @InitBinder("audio")
-    protected void initBinderFileBucket(WebDataBinder binder) {
+    //validating the audio model (has to be the name of the parameter below where @Valid is used
+    @InitBinder("audioFileModel")
+    protected void initBinder(WebDataBinder binder) {
         binder.setValidator(fileValidator);
     }
 
     @RequestMapping(value = "/audio", method = RequestMethod.GET)
     public String getAudioUploadPage(ModelMap model) {
-        AudioFileModel audio = new AudioFileModel();
-        model.addAttribute("audioFile", audio);
+        AudioFileModel maudio = new AudioFileModel();
+        model.addAttribute("audioFileModel", maudio);
         return "audioupload";
     }
 
     @RequestMapping(value = "/audio", method = RequestMethod.POST)
-    public String audioFileUpload(@Valid AudioFileModel audio, BindingResult result, ModelMap model) throws IOException {
-
-        if (result.hasErrors()) {
-            System.out.println("validation errors");
+    public String audioFileUpload(@Valid AudioFileModel fileModel, BindingResult result, ModelMap model) throws IOException {
+        
+        if (result.hasErrors()) {         
+            System.out.println("validation errors");         
             return "audioupload";
         } else {
+            
+            //fileValidator.validate(file, model.);
             System.out.println("Fetching file");
-            MultipartFile multipartFile = audio.getAudio();
+            MultipartFile multipartFile = fileModel.getAudio();
 
             //Now do something with file...
             //should save to database
             //this copies it to another directory after its been uploaded
             //String uploadPath = context.getRealPath("") + File.separator + "temp" + File.separator;
-            FileCopyUtils.copy(audio.getAudio().getBytes(), new File(UPLOAD_LOCATION + audio.getAudio().getOriginalFilename()));
+            FileCopyUtils.copy(fileModel.getAudio().getBytes(), new File(UPLOAD_LOCATION + fileModel.getAudio().getOriginalFilename()));
 
             String fileName = multipartFile.getOriginalFilename();
             model.addAttribute("audioName", fileName);
