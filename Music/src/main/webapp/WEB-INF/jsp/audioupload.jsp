@@ -17,17 +17,16 @@
         <h1>Music file upload</h1>
 
 
-        <form:form method="POST" modelAttribute="audioFile" enctype="multipart/form-data">
+        <form:form method="POST" modelAttribute="audioFileModel" enctype="multipart/form-data">
 
 
             <label for="file">Upload a file</label>
 
             <form:input type="file" path="audio" />
+            
+            <form:errors path="audio" style="color:red;"/>
+            <input type="submit" value="Upload" />
 
-            <form:errors path="audio" />
-
-
-            <input type="submit" value="Upload" >
 
         </form:form>
 

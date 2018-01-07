@@ -9,6 +9,7 @@ import com.group4.music.model.AudioFileModel;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  *
@@ -16,21 +17,20 @@ import org.springframework.validation.Validator;
  */
 @Component
 public class FileValidator implements Validator {
-    
+
     @Override
     public boolean supports(Class<?> clazz) {
         return AudioFileModel.class.isAssignableFrom(clazz);
     }
- 
+
     @Override
     public void validate(Object obj, Errors errors) {
-        AudioFileModel file = (AudioFileModel) obj;
-         
-        if(file.getAudio()!=null){
-            if (file.getAudio().getSize() == 0) {
-                //use resource for error instead: missing.file= Please select a file/"missing.file"
-                errors.rejectValue("file", "file.missing");
-            }
+        AudioFileModel audiofile = (AudioFileModel) obj;
+        MultipartFile file = audiofile.getAudio();
+        if (file.isEmpty()) {
+            errors.rejectValue("audio", "file.miss");
         }
+
+        
     }
 }
