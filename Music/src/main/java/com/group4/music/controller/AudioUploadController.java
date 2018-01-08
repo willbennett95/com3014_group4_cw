@@ -39,7 +39,7 @@ public class AudioUploadController {
     @Autowired
     ServletContext context;
 
-    private static String UPLOAD_LOCATION = "/Users/Emi/Desktop/";
+    private static final String UPLOAD_LOCATION = "com3014_group4_cw/";
 
     //validating the audio model (has to be the name of the parameter below where @Valid is used
     @InitBinder("audioFileModel")
@@ -61,26 +61,20 @@ public class AudioUploadController {
             System.out.println("validation errors");
             return "audioupload";
         } else {
-
-
+            //System.out.println("Fetching file");
+            //System.out.println("real path: " + context.getRealPath(""));
             
-
-          
-            //fileValidator.validate(file, model.);
-            System.out.println("Fetching file");
+            String absolutePathSystem = new String(context.getRealPath(""));
+            // getting index of letter c of com3014_group4_cw/
+            int startIndexFolder = absolutePathSystem.indexOf(UPLOAD_LOCATION);
+            // build the absolute path for the audio folder regardless of operating system: ../com3014_group4_cw/Music/AudioFile/
+            String filePath = absolutePathSystem.substring(0, startIndexFolder+UPLOAD_LOCATION.length()) + "AudioFiles/"; 
+            System.out.println("files path: " + filePath);
+            
             MultipartFile multipartFile = fileModel.getAudio();
-
-            //Now do something with file...
-            //should save to database
-            //this copies it to another directory after its been uploaded
-            //String uploadPath = context.getRealPath("") + File.separator + "temp" + File.separator;
-            File m = new File(UPLOAD_LOCATION + fileModel.getAudio().getOriginalFilename());
-           
-            
-            FileCopyUtils.copy(fileModel.getAudio().getBytes(), m);
-            
-            
-
+            // upload file to audio directory
+            multipartFile.transferTo(new File(filePath+multipartFile.getOriginalFilename()));
+      
             String fileName = multipartFile.getOriginalFilename();
             model.addAttribute("audioName", fileName);
             return "success";
