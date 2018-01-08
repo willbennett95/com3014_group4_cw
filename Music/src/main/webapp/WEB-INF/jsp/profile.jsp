@@ -41,7 +41,7 @@
         <nav class="navbar navbar-inverse navbar-static-top">
           <div class="container">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -54,8 +54,6 @@
                     <li><a href="<c:url value="store" />">Collection</a></li>
                 <li><a href="#contact">Contact</a></li>
                   </ul>
-                </li>
-              </ul>
             </div>
           </div>
         </nav>

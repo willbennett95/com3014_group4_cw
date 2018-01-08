@@ -40,7 +40,7 @@
                 <nav class="navbar navbar-inverse navbar-static-top">
                     <div class="container">
                         <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
@@ -53,8 +53,6 @@
                                 <li class="active"><a href="<c:url value="home" />">Home</a></li>
                                 <li><a href="<c:url value="store" />">Collection</a></li>
                                 <li><a href="<c:url value="profile" />">View Profile</a></li>
-                            </ul>
-                            </li>
                             </ul>
                         </div>
                     </div>
@@ -127,20 +125,20 @@
                 <div class="col-lg-4">
                     <img class="img-circle" src="<c:url value="/resources/images/featured2.jpeg" />" alt="Feature" width="140" height="140">
                     <h2>Featured Artists</h2>
-                    <p>Description.</p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                    <p>Listen and discover.</p>
+                    <p><a class="btn btn-default" href="<c:url value="construction" />" role="button">View details &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="img-circle" src="<c:url value="/resources/images/sales.jpg" />" alt="Deals" width="140" height="140">
                     <h2>See our latest news!</h2>
-                    <p>Description.</p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                    <p>Read our announcements.</p>
+                    <p><a class="btn btn-default" href="<c:url value="construction" />" role="button">View details &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="img-circle" src="<c:url value="/resources/images/join.jpeg" />" alt="Join Us" width="140" height="140">
                     <h2>Join the community!</h2>
-                    <p>Description.</p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                    <p>Post your views.</p>
+                    <p><a class="btn btn-default" href="<c:url value="construction" />" role="button">View details &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->
             </div><!-- /.row -->
 
