@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.group4.music.service;
+package com.group4.music.validator;
 
 
 /**
- *
+ * Takes the full path of the servlet context in a controller and return modified path for audio files
  * @author Emi
  */
 public class AudioPath {

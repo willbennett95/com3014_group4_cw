@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.group4.music.service;
+package com.group4.music.validator;
 
 import com.group4.music.model.AudioFileModel;
 import java.io.File;
