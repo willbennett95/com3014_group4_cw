@@ -9,17 +9,58 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    <title>Soundbite Profile</title>  
+        
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="<c:url value="/resources/images/music.ico" />">
+
+    <title>Soundbite Profile</title>
+
+    
     <% 
         Date date = new Date();
     %>
     
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="<c:url value="/resources/style/profile.css" />" >   
+    
+    <link rel="stylesheet" href="<c:url value="/resources/style/carousel.css" />" >
+    <link rel="stylesheet" href="<c:url value="/resources/style/bootstrap.min.css" />" >
+    <link rel="stylesheet" href="<c:url value="/resources/style/profile.css" />" >
+    
     </head>
-    <body>
-        <jsp:include page="_navbar.jsp"/>
-        
+<!-- NAVBAR
+================================================== -->
+  <body>
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                    <li class="active"><a href="<c:url value="home" />">Home</a></li>
+                    <li><a href="<c:url value="store" />">Collection</a></li>
+                <li><a href="#contact">Contact</a></li>
+                  </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
     <!-- User Profile 
     ================================================== -->
    
