@@ -5,10 +5,15 @@
  */
 package com.group4.music.controller;
 
+import com.group4.music.model.Audio;
 import com.group4.music.model.AudioFileModel;
+import com.group4.music.model.User;
+import com.group4.music.repository.AudioRepository;
+import com.group4.music.service.UserService;
 import com.group4.music.validator.FileValidator;
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletContext;
@@ -21,6 +26,7 @@ import org.springframework.util.FileCopyUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
@@ -30,8 +36,14 @@ import org.springframework.web.multipart.MultipartFile;
  * @author Emi
  */
 @Controller
-@RequestMapping("/upload")
+@RequestMapping("/mymusic")
 public class AudioUploadController {
+
+    @Autowired
+    AudioRepository audioRepository;
+
+    @Autowired
+    private UserService us;
 
     @Autowired
     FileValidator fileValidator;
@@ -47,38 +59,114 @@ public class AudioUploadController {
         binder.setValidator(fileValidator);
     }
 
-    @RequestMapping(value = "/audio", method = RequestMethod.GET)
-    public String getAudioUploadPage(ModelMap model) {
-        AudioFileModel maudio = new AudioFileModel();
-        model.addAttribute("audioFileModel", maudio);
+    /**
+     * This method will list all existing songs for a user.
+     */
+    @RequestMapping(value = "/list-{userId}", method = RequestMethod.GET)
+    public String listSongsOfUser(@PathVariable String userId, ModelMap model) {
+        User user = us.findUserByUsername(userId);
+        List<Audio> audios = audioRepository.findByUser(user);
+        model.addAttribute("songsbyuser", audios);
+        model.addAttribute("username", userId);
+        return "mymusicpage";
+    }
+
+    /**
+     * get page to upload a new audio
+     *
+     * @param userId
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/audio-{userId}", method = RequestMethod.GET)
+    public String getAudioUploadPage(@PathVariable String userId, ModelMap model) {
+        User user = us.findUserByUsername(userId);
+        model.addAttribute("user", user);
+
+        AudioFileModel audio = new AudioFileModel();
+        model.addAttribute("audioFileModel", audio);
         return "audioupload";
     }
 
-    @RequestMapping(value = "/audio", method = RequestMethod.POST)
-    public String audioFileUpload(@Valid AudioFileModel fileModel, BindingResult result, ModelMap model) throws IOException {
+    @RequestMapping(value = "/audio-{userId}", method = RequestMethod.POST)
+    public String audioFileUpload(@PathVariable String userId, @Valid AudioFileModel fileModel, Audio audio, BindingResult result, ModelMap model) throws IOException {
 
         if (result.hasErrors()) {
             System.out.println("validation errors");
             return "audioupload";
         } else {
-            //System.out.println("Fetching file");
-            //System.out.println("real path: " + context.getRealPath(""));
-            
-            String absolutePathSystem = new String(context.getRealPath(""));
+
+            String absolutePathSystem = context.getRealPath("");
+            //audioPath = new AudioPath(context.getRealPath(""));
             // getting index of letter c of com3014_group4_cw/
             int startIndexFolder = absolutePathSystem.indexOf(UPLOAD_LOCATION);
-            // build the absolute path for the audio folder regardless of operating system: ../com3014_group4_cw/Music/AudioFile/
-            String filePath = absolutePathSystem.substring(0, startIndexFolder+UPLOAD_LOCATION.length()) + "AudioFiles/"; 
-            System.out.println("files path: " + filePath);
-            
+            int endIndex = startIndexFolder + UPLOAD_LOCATION.length();
+            String filePath = absolutePathSystem.substring(0, endIndex) + "AudioFiles/";
             MultipartFile multipartFile = fileModel.getAudio();
             // upload file to audio directory
-            multipartFile.transferTo(new File(filePath+multipartFile.getOriginalFilename()));
-      
+            multipartFile.transferTo(new File(filePath + multipartFile.getOriginalFilename()));
+
+            File file = new File(filePath + multipartFile.getOriginalFilename());
+
             String fileName = multipartFile.getOriginalFilename();
             model.addAttribute("audioName", fileName);
-            return "success";
+            return "redirect:/success-" + userId;
         }
+
+    }
+
+    /**
+     * get page to upload a new audio
+     *
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/success-{userId}", method = RequestMethod.GET)
+    public String getAudioDetailsPage(@PathVariable String userId, ModelMap model) {
+        Audio audio = new Audio();
+        model.addAttribute("addedAudio", audio);
+        return "redirect:/success" + userId;
+    }
+
+    @RequestMapping(value = "/success-{userId}", method = RequestMethod.POST)
+    public String postAudioDetailsPage(@PathVariable String userId, Audio audio, BindingResult result, ModelMap model) throws IOException {
+
+        audio.setUser(us.findUserByUsername(userId));
+        audioRepository.save(audio);
+        model.addAttribute("username", userId);
+        
+        return "redirect:/list-" + userId;
+
+    }
+
+    /**
+     * edit a song from my music
+     */
+    @RequestMapping(value = {"/edit-audio-{aId}"}, method = RequestMethod.GET)
+    public String editAudio(@PathVariable Long aId, ModelMap model) {
+        Audio a = (Audio) audioRepository.findOne(aId);
+        model.addAttribute("songtoedit", a);
+        return "editsong";
+    }
+
+    /**
+     *
+     */
+    @RequestMapping(value = {"/edit-audio-{aId}"}, method = RequestMethod.POST)
+    public String updateUser(@Valid Audio audio, BindingResult result,
+            ModelMap model, @PathVariable String aId) {
+
+        audioRepository.save(audio);
+
+        model.addAttribute("successedit", audio);
+        return "mymusicpage";
+    }
+
+    @RequestMapping(value = {"/delete-audio-{userId}-{aId}"}, method = RequestMethod.GET)
+    public String deleteDocument(@PathVariable Long aId, @PathVariable String userId) {
+        Audio a = (Audio) audioRepository.findOne(aId);
+        audioRepository.delete(a);
+        return "redirect:/list-" + userId;
     }
 
 }
