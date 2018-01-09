@@ -1,0 +1,155 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 09-Jan-2018, 02:24:09
+    Author     : Kieran
+*/
+
+
+
+.neatenPlayer{
+    clear:both;
+}
+
+#audioContainer {
+    width: 340px;
+    min-height: 300px;
+    overflow: auto;
+    margin: 60px auto;
+    border: #000000 solid 2px;
+}
+
+#audioLogo {
+    position: relative;
+    overflow: hidden;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.playerLogo {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 10%;
+}
+
+#songInfo {
+    text-align: center;
+}
+
+#songInfo.songArtist {
+    font-weight: bold;
+}
+
+input#volume {
+    width: 85%;
+    -webkit-appearance: none !important;
+    margin-left: 7.5%;
+    background: #000000;
+    height: 1px;
+    margin-top: 10px;
+    vertical-align: middle;
+}
+
+input#volume::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    height: 12px;
+    width: 12px;
+}
+
+#buttons {
+    width: 100%;
+    display: block;
+    margin: 0px auto;
+    overflow: auto;
+    position: relative;
+    left: 30px;
+}
+
+button#muteSongButton {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+button#prevSongButton {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+button#playSongButton {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+button#pauseSongButton {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+button#stopSongButton {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+button#nextSongButton {
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+#progressCheck {
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+}
+
+#progressBar {
+    height: 10px;
+    width: 80%;
+    margin-left: 7.5%;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background:url(/resources/images/progressbar.png) no-repeat;
+}
+
+#currentProgress {
+    height: 10px;
+    display: inline-block;
+    background:url(/resources/images/progressbarplaying.png) no-repeat;
+}
+
+#currentPlaytime {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    padding: 4px 8px;
+    background: #000000;
+    border-radius: 5px;
+}
