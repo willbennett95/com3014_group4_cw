@@ -14,11 +14,7 @@
     </head>
     <body>
 
-<<<<<<< HEAD
         File  <strong>${fileName}</strong> uploaded successfully.
-=======
-        File  <strong>${audioName}</strong> uploaded successfully.
->>>>>>> master
         <br/><br/>
         
         <a href="<c:url value='Music/upload/audio' />">go back</a>	

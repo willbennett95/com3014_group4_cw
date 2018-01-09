@@ -15,11 +15,7 @@
         <link rel="stylesheet" href="<c:url value="/resources/style/signin.css" />" >
     </head>
     <body>
-<<<<<<< HEAD
         <jsp:include page="_navbar-login.jsp"/>
-=======
-        <jsp:include page="_navbar.jsp"/>
->>>>>>> master
         
         <div class="container marketing">
             <div class="container">
@@ -52,7 +48,6 @@
 
                     <label for="file">Upload a file</label>
                     <form:input type="file" path="audio" />
-<<<<<<< HEAD
                     <input id="btnSubmit" type="submit" value="Upload" />
                     <form:errors path="audio" style="color:red;"/>
 
@@ -63,12 +58,6 @@
                     </pre>
                     
                     <script type="text/javascript" src="javascript/upload.js"></script>
-=======
-                    <input type="submit" value="Upload" />
-                    <form:errors path="audio" style="color:red;"/>
-
-                </form:form>
->>>>>>> master
 
 
             </div>
