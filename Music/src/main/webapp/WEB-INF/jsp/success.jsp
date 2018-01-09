@@ -14,7 +14,7 @@
     </head>
     <body>
 
-        File  <strong>${fileName}</strong> uploaded successfully.
+        File  <strong>${audioName}</strong> uploaded successfully.
         <br/><br/>
         
         <a href="<c:url value='Music/upload/audio' />">go back</a>	
