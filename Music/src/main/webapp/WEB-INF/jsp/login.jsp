@@ -42,7 +42,6 @@
         </div>
         
         <p class="register">Don't have an account? Register <a href="register">here</a>!</p>
-        <p class="register">Or <a href="#"> sign-in with Facebook</a>!</p>
 
       <!-- FOOTER -->
       <footer>
