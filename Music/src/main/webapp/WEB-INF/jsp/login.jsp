@@ -26,6 +26,7 @@
     <div class="container marketing">
         <div class="container">
       <!-- Three columns of text below the carousel -->
+<<<<<<< HEAD
      <form method="POST" action="/Music/login" class="form-signin">
         <h2 class="form-signin-heading">Please sign in</h2>
         <div class="form-group ${error != null ? 'has-error' : ''}">
@@ -34,14 +35,30 @@
             <input name="password" type="password" class="form-control" placeholder="Password"/>
             <span>${error}</span>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+=======
+     <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+>>>>>>> master
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
         </div>
         
         <p class="register">Don't have an account? Register <a href="register">here</a>!</p>
+<<<<<<< HEAD
         <p class="register">Or <a href="#"> sign-in with Facebook</a>!</p>
        
+=======
+
+>>>>>>> master
       <!-- FOOTER -->
       <footer>
           <p class="pull-right"><a href="#">Back to top</a></p>
@@ -50,7 +67,12 @@
       </footer>
 
     </div><!-- /.container -->
+<<<<<<< HEAD
      
+=======
+
+
+>>>>>>> master
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -58,4 +80,9 @@
         <script>window.jQuery || document.write('<script src="<c:url value="/resources/javascript/jquery-3.2.1.min.js" />"><\/script>')</script>
         <script src="<c:url value="/resources/javascript/bootstrap.min.js" />"></script>
   </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+
+>>>>>>> master

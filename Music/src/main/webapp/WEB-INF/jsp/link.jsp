@@ -30,7 +30,11 @@
     <!-- NAVBAR
     ================================================== -->
     <body>
+<<<<<<< HEAD
         <jsp:include page="_navbar-login.jsp"/>
+=======
+        <jsp:include page="_navbar.jsp"/>
+>>>>>>> master
                 
          <!-- Content
     ================================================== -->           

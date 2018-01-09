@@ -15,8 +15,13 @@
     %>
     </head>
     <body>
+<<<<<<< HEAD
         <jsp:include page="_navbar-login.jsp"/>
         <jsp:include page="_carousel-login.jsp"/>
+=======
+        <jsp:include page="_navbar.jsp"/>
+        <jsp:include page="_carousel.jsp"/>
+>>>>>>> master
 
 
         <!-- Marketing messaging and featurettes

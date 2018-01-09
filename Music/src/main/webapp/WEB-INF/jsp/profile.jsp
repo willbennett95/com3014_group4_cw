@@ -18,7 +18,11 @@
     <link rel="stylesheet" href="<c:url value="/resources/style/profile.css" />" >   
     </head>
     <body>
+<<<<<<< HEAD
         <jsp:include page="_navbar-login.jsp"/>
+=======
+        <jsp:include page="_navbar.jsp"/>
+>>>>>>> master
         
     <!-- User Profile 
     ================================================== -->
@@ -35,7 +39,11 @@
             <img class="img-thumbnail picture hidden-xs" src="<c:url value="/resources/images/genavatar.jpg" />" />
            <img class="img-thumbnail visible-xs picture_mob" src="<c:url value="/resources/images/genavatar.jpg" />"  />
            <div class="header">
+<<<<<<< HEAD
                 <h1>${pageContext.request.userPrincipal.name}</h1>
+=======
+                <h1>Loren Ipsum</h1>
+>>>>>>> master
                 <h4>Music Enthusiast</h4>
                 <span>Some generic and benign information.</span>
            </div>
