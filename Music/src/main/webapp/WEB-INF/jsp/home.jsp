@@ -31,19 +31,19 @@
                     <img class="img-circle" src="<c:url value="/resources/images/featured2.jpeg" />" alt="Feature" width="140" height="140">
                     <h2>Featured Artists</h2>
                     <p>Description.</p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                    <p><a class="btn btn-default" href="<c:url value="construction" />" role="button">View details &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="img-circle" src="<c:url value="/resources/images/sales.jpg" />" alt="Deals" width="140" height="140">
                     <h2>See our latest news!</h2>
                     <p>Description.</p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                    <p><a class="btn btn-default" href="<c:url value="construction" />" role="button">View details &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->
                 <div class="col-lg-4">
                     <img class="img-circle" src="<c:url value="/resources/images/join.jpeg" />" alt="Join Us" width="140" height="140">
                     <h2>Join the community!</h2>
                     <p>Description.</p>
-                    <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                    <p><a class="btn btn-default" href="<c:url value="construction" />" role="button">View details &raquo;</a></p>
                 </div><!-- /.col-lg-4 -->
             </div><!-- /.row -->
 
