@@ -26,7 +26,7 @@
     <div class="container marketing">
         <div class="container">
       <!-- Three columns of text below the carousel -->
-     <form method="POST" action="${contextPath}/login" class="form-signin">
+     <form method="POST" action="/Music/login" class="form-signin">
         <h2 class="form-signin-heading">Please sign in</h2>
         <div class="form-group ${error != null ? 'has-error' : ''}">
             <span>${message}</span>

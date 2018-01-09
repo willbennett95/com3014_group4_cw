@@ -7,7 +7,6 @@ com\group4\music\exception\AudioExceptionHandler.class
 com\group4\music\service\UserService.class
 com\group4\music\service\SecurityServiceImpl.class
 com\group4\music\controller\AudioUploadController.class
-com\group4\music\controller\HomeController.class
 com\group4\music\service\AudioFormatValidator.class
 com\group4\music\controller\StoreController.class
 com\group4\music\service\UserInfoServiceImpl.class

@@ -45,7 +45,7 @@
                             </ul>
                             <ul class="nav navbar-nav navbar-right"> 
                                 <li><a href="<c:url value="/profile" />"> ${pageContext.request.userPrincipal.name}</a></li>
-                                <li><a onclick="document.forms['logoutForm'].submit()">Log Out</a></li>
+                                <li><a href="/Music/logout">Log Out</a></li>
                             </ul>    
                         </div>
                     </div>
