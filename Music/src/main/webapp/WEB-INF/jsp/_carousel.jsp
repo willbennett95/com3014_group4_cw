@@ -44,7 +44,7 @@
                         <div class="carousel-caption">
                             <h1>Upload your own creations.</h1>
                             <p>Create a personalised artist page!</p>
-                            <p><a class="btn btn-lg btn-primary" href="#INFORMATION" role="button">Learn more</a></p>
+                            <p><a class="btn btn-lg btn-primary" href="login" role="button">Learn more</a></p>
                         </div>
                     </div>
                 </div>

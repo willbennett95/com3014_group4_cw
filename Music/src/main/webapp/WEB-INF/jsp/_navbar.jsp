@@ -27,6 +27,7 @@
                 <nav class="navbar navbar-inverse navbar-static-top">
                     <div class="container">
                         <div class="navbar-header">
+                          <a class="navbar-brand" href="home">Soundbite</a>
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
@@ -41,6 +42,10 @@
                                 <li><a href="<c:url value="store" />">Collection</a></li>
                                 <li><a href="<c:url value="profile" />">View Profile</a></li>
                             </ul>
+                            <ul class="nav navbar-nav navbar-right"> 
+                                <li><a href="<c:url value="login" />"> Log In</a></li>
+                                <li><a href="<c:url value="register" />">Register</a></li>
+                            </ul> 
                         </div>
                     </div>
                 </nav>

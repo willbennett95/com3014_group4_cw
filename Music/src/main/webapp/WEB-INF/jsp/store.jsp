@@ -17,8 +17,8 @@
         %>  
     </head>
     <body>
-        <jsp:include page="_navbar.jsp"/>
-        <jsp:include page="_carousel.jsp"/>
+        <jsp:include page="_navbar-login.jsp"/>
+        <jsp:include page="_carousel-login.jsp"/>
 
 
     <!-- Marketing messaging and featurettes
