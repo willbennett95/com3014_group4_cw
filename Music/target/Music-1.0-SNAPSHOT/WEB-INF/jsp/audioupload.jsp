@@ -48,10 +48,16 @@
 
                     <label for="file">Upload a file</label>
                     <form:input type="file" path="audio" />
-                    <input type="submit" value="Upload" />
+                    <input id="btnSubmit" type="submit" value="Upload" />
                     <form:errors path="audio" style="color:red;"/>
 
                 </form:form>
+                    
+                    <pre>
+                        <span id="result"></span>
+                    </pre>
+                    
+                    <script type="text/javascript" src="javascript/upload.js"></script>
 
 
             </div>
