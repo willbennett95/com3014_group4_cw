@@ -6,7 +6,7 @@
 package com.group4.music.controller;
 
 import com.group4.music.model.AudioFileModel;
-import com.group4.music.service.FileValidator;
+import com.group4.music.validator.FileValidator;
 import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
