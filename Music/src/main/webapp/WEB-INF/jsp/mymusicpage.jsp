@@ -25,12 +25,12 @@
                 </tr>
             </thead>
             <tbody>
-                <c:forEach items="${songsbyuser}" var="song">
+                <c:forEach items="${songsByUser}" var="song">
                     <tr>
                         <td>${song.artist}</td>
-                        <td>${song.lastName}</td>
-                        <td><a href="<c:url value='/edit-audio-${song.id}' />" > edit</a></td>
-                        <td><a href="<c:url value='/delete-document-${username}-${song.id}' />" >delete</a></td>
+                        <td>${song.title}</td>
+                        <td><a href="<c:url value='/mymusic/edit-audio-${song.id}' />" > edit</a></td>
+                        <td><a href="<c:url value='/mymusic/delete-audio-${song.id}' />" >delete</a></td>
                     </tr>
                 </c:forEach>
                     

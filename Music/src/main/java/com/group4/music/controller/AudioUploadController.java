@@ -20,12 +20,14 @@ import javax.servlet.ServletContext;
 import javax.validation.Valid;
 import org.apache.tika.Tika;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -60,18 +62,6 @@ public class AudioUploadController {
     }
 
     /**
-     * This method will list all existing songs for a user.
-     */
-    @RequestMapping(value = "/list-{userId}", method = RequestMethod.GET)
-    public String listSongsOfUser(@PathVariable String userId, ModelMap model) {
-        User user = us.findUserByUsername(userId);
-        List<Audio> audios = audioRepository.findByUser(user);
-        model.addAttribute("songsbyuser", audios);
-        model.addAttribute("username", userId);
-        return "mymusicpage";
-    }
-
-    /**
      * get page to upload a new audio
      *
      * @param userId
@@ -89,7 +79,8 @@ public class AudioUploadController {
     }
 
     @RequestMapping(value = "/audio-{userId}", method = RequestMethod.POST)
-    public String audioFileUpload(@PathVariable String userId, @Valid AudioFileModel fileModel, Audio audio, BindingResult result, ModelMap model) throws IOException {
+    public String audioFileUpload(@PathVariable String userId, @Valid @ModelAttribute AudioFileModel fileModel,
+            BindingResult result, ModelMap model) throws IOException {
 
         if (result.hasErrors()) {
             System.out.println("validation errors");
@@ -110,7 +101,7 @@ public class AudioUploadController {
 
             String fileName = multipartFile.getOriginalFilename();
             model.addAttribute("audioName", fileName);
-            return "redirect:/success-" + userId;
+            return "redirect:/mymusic/success-" + userId;
         }
 
     }
@@ -125,7 +116,8 @@ public class AudioUploadController {
     public String getAudioDetailsPage(@PathVariable String userId, ModelMap model) {
         Audio audio = new Audio();
         model.addAttribute("addedAudio", audio);
-        return "redirect:/success" + userId;
+        model.addAttribute("username", userId);
+        return "success";
     }
 
     @RequestMapping(value = "/success-{userId}", method = RequestMethod.POST)
@@ -133,10 +125,16 @@ public class AudioUploadController {
 
         audio.setUser(us.findUserByUsername(userId));
         audioRepository.save(audio);
-        model.addAttribute("username", userId);
-        
-        return "redirect:/list-" + userId;
 
+        return "redirect:/mymusic/" + userId;
+
+    }
+
+    @RequestMapping(value = "/{userId}", method = RequestMethod.GET)
+    public String showMyMusic(@PathVariable String userId, ModelMap model) {
+        model.addAttribute("songsByUser", audioRepository.findByUser(us.findUserByUsername(userId)));
+        model.addAttribute("username", userId);
+        return "mymusicpage";
     }
 
     /**
@@ -162,11 +160,14 @@ public class AudioUploadController {
         return "mymusicpage";
     }
 
-    @RequestMapping(value = {"/delete-audio-{userId}-{aId}"}, method = RequestMethod.GET)
-    public String deleteDocument(@PathVariable Long aId, @PathVariable String userId) {
-        Audio a = (Audio) audioRepository.findOne(aId);
-        audioRepository.delete(a);
-        return "redirect:/list-" + userId;
+    @RequestMapping(value = {"/delete-audio-{aId}"}, method = RequestMethod.GET)
+    public String deleteDocument(@PathVariable String aId) {
+        Audio a = (Audio) audioRepository.findOne(Long.decode(aId));
+        String currentUsername = SecurityContextHolder.getContext().getAuthentication().getName();
+        if (a.getUser().getUsername().equals(currentUsername)) {
+            audioRepository.delete(a);
+        }
+        return "redirect:/mymusic/" + us.findUserByUsername(currentUsername).getId();
     }
 
 }

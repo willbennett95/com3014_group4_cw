@@ -15,7 +15,7 @@
     </head>
     <body>
 
-        <form:form method="POST" modelAttribute="addedaudio">
+        <form:form method="POST" modelAttribute="addedAudio">
 
             <h2>Upload a file</h2>
 
