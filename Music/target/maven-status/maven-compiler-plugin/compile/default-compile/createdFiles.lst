@@ -18,6 +18,7 @@ com/group4/music/model/Audio.class
 com/group4/music/config/WebSecurityConfig.class
 com/group4/music/validator/UserValidator.class
 com/group4/music/service/UserServiceImpl.class
+com/group4/music/service/AudioService.class
 com/group4/music/repository/AudioRepository.class
 com/group4/music/repository/UserRepository.class
 com/group4/music/repository/RoleRepository.class

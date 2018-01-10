@@ -15,7 +15,7 @@
     </head>
     <body>
 
-        <form:form method="POST" modelAttribute="addedAudio">
+        <form:form method="POST" modelAttribute="audio">
 
             <h2>Upload a file</h2>
 
@@ -27,8 +27,6 @@
         <label  for="Artist">Artist</label>
         <form:input type="text" path="artist" placeholder="Artist" />
 
-        <label  for="name">Name</label>
-        <form:input type="text" path="nameOfAudioFile" placeholder="Artist" />
         <input type="submit" value="UploadDetails" />
 
     </form:form>

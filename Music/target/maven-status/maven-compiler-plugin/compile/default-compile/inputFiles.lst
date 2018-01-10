@@ -12,6 +12,7 @@
 /Users/Emi/Documents/GitHub/com3014_group4_cw/Music/src/main/java/com/group4/music/service/UserServiceImpl.java
 /Users/Emi/Documents/GitHub/com3014_group4_cw/Music/src/main/java/com/group4/music/validator/FileValidator.java
 /Users/Emi/Documents/GitHub/com3014_group4_cw/Music/src/main/java/com/group4/music/validator/UserValidator.java
+/Users/Emi/Documents/GitHub/com3014_group4_cw/Music/src/main/java/com/group4/music/service/AudioService.java
 /Users/Emi/Documents/GitHub/com3014_group4_cw/Music/src/main/java/com/group4/music/repository/RoleRepository.java
 /Users/Emi/Documents/GitHub/com3014_group4_cw/Music/src/main/java/com/group4/music/service/UserInfoServiceImpl.java
 /Users/Emi/Documents/GitHub/com3014_group4_cw/Music/src/main/java/com/group4/music/controller/UserController.java
