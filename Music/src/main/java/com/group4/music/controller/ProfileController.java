@@ -23,4 +23,9 @@ public class ProfileController {
         return "profile";
     }
     
+     @RequestMapping(value = {"/", "/home"}, method = RequestMethod.GET)
+    public String index() {
+        return "home";
+    }
+    
 }
